@@ -5,3 +5,5 @@
 [链表](https://github.com/mabel-xue/js-data-structures/blob/master/linkedList.js)
 
 [双向链表](https://github.com/mabel-xue/js-data-structures/blob/master/doublyLinkedList.js)
+
+[队列](https://github.com/mabel-xue/js-data-structures/blob/master/queue.js)
