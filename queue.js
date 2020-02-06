@@ -1,28 +1,34 @@
+// 队列节点
+class Node {
+  constructor(element) {
+    this.element = element;
+    this.next = null;
+  }
+}
 // 队列
 class Queue {
   constructor() {
-    this.items = [];
-    this.front;
-    this.back;
+    this.head = null;
+    this.tail = null;
   }
 
-  getFront() {
-    return this.items[0];
-  }
-
-  getBack() {
-    return this.items[this.items.length - 1];
-  }
-
+  // 入队
   enqueue(element) {
-    this.items.push(element);
-    this.front = this.getFront();
-    this.back = this.getBack();
+    const node = new Node(element);
+    if (this.tail !== null) {
+      this.tail.next = node;
+    }
+    this.tail = node;
+    if (this.head === null) {
+      this.head = node;
+    }
   }
 
+  // 出队
   dequeue() {
-    this.items.pop();
-    this.front = this.getFront();
-    this.back = this.getBack();
+    this.head = this.head.next;
+    if (this.head === null) {
+      this.tail = null;
+    }
   }
 }
