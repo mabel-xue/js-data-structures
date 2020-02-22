@@ -1,7 +1,7 @@
 // 哈希表 (不处理冲突)
 class HashTable {
-  constructor() {
-    this.table = new Array(1024);
+  constructor(size) {
+    this.table = new Array(size);
   }
 
   // 哈希函数 - 除留余数法
@@ -13,14 +13,18 @@ class HashTable {
     return total % this.table.length;
   }
 
-  insert(key, value) {
+  set(key, value) {
     const pos = this.hash(key);
     this.table[pos] = value;
-
   }
 
   get(key) {
     return this.table[this.hash(key)];
+  }
+
+  delete(key) {
+    const pos = this.hash(key);
+    delete this.table[pos];
   }
 
   show() {
@@ -30,13 +34,12 @@ class HashTable {
       }
     }
   }
-
 }
 
 // 哈希表 （处理冲突）
 class HashTable {
-  constructor() {
-    this.table = new Array(1024);
+  constructor(size) {
+    this.table = new Array(size);
   }
 
   // 哈希函数 - 平方求和法
@@ -60,7 +63,7 @@ class HashTable {
     }
   }
 
-  insert(key, value) {
+  set(key, value) {
     const pos = this.hash(key);
     if (this.table[pos] == null) {
       this.table[pos] = value;
