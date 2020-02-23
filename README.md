@@ -11,3 +11,5 @@
 [栈 stack](https://github.com/mabel-xue/js-data-structures/blob/master/stack.js)
 
 [哈希表 hashTable](https://github.com/mabel-xue/js-data-structures/blob/master/hashTable.js)
+
+[堆 heap](https://github.com/mabel-xue/js-data-structures/blob/master/heap.js)
