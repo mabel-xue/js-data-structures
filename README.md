@@ -15,3 +15,5 @@
 [堆 heap](https://github.com/mabel-xue/js-data-structures/blob/master/heap.js)
 
 [优先队列 priorityQueue](https://github.com/mabel-xue/js-data-structures/blob/master/priorityQueue.js)
+
+[字典树 trie](https://github.com/mabel-xue/js-data-structures/blob/master/trie.js)
