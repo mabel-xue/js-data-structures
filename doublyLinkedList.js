@@ -1,4 +1,7 @@
-// 双向链表节点
+/** 
+ * 双向链表节点
+ * 包含三个值: 当前节点的值和分别指向前后节点的链接
+ */
 class Node {
   constructor(element) {
     this.element = element;
@@ -7,13 +10,13 @@ class Node {
   }
 }
 
-// 双向链表
+/** 双向链表 */
 class DoublyLinkedList {
   constructor() {
     this.head = null;
   }
 
-  // 在列表末尾添加一个元素
+  /** 在链表末尾添加一个元素 */
   add(element) {
     const node = new Node(element);
     if (this.head === null) {
@@ -28,7 +31,7 @@ class DoublyLinkedList {
     node.prev = current;
   }
 
-  // 删除
+  /** 删除 */
   remove(element) {
     if (this.head === null) {
       return false;
@@ -50,17 +53,20 @@ class DoublyLinkedList {
     }
     if (current) {
       prev.next = current.next || null;
-      current.prev = prev;
+      if (current.next) {
+        current.next.prev = prev;
+      }
       return true;
     }
     return false;
   }
 
-  // 反向遍历
+  /** 反向遍历 */
   * reverse() {
     let current = this.head;
     let prev = null;
     let tail = null;
+    // step1: 调序重排
     while(current !== null) {
       prev = current.prev;
       current.prev = current.next;
@@ -69,7 +75,7 @@ class DoublyLinkedList {
       current = current.prev;
     }
     this.head = tail;
-    // 遍历
+   // step2: 正序遍历
     current = this.head;
     while(current !== null) {
       yield current.element;
@@ -77,3 +83,18 @@ class DoublyLinkedList {
     }
   }
 }
+
+// 示例
+const list = new DoublyLinkedList();
+list.add('1');
+list.add('2');
+list.add('5');
+list.add('3');
+
+list.remove('5');
+
+const reverseList = list.reverse();
+
+console.log(reverseList.next());
+console.log(reverseList.next());
+console.log(reverseList.next());

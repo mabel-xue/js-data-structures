@@ -15,7 +15,7 @@ class LinkedList {
     this.head = null;
   }
 
-  /** 在列表末尾添加一个元素 */
+  /** 在链表末尾添加一个元素 */
   push(element) {
     const node = new Node(element);
     let current; // 指针
@@ -30,7 +30,7 @@ class LinkedList {
     }
   }
 
-  /** 在列表头部添加一个元素 */
+  /** 在链表头部添加一个元素 */
   unshift(element) {
     const node = new Node(element);
     if (this.head === null) {
@@ -84,10 +84,10 @@ class LinkedList {
 
   /** 反向遍历 */
   * reverse() {
-    // step1: 调序重排
     let current = this.head;
     let prev = null;
     let next;
+    // step1: 调序重排
     while(current !== null) {
       next = current.next;
       current.next = prev;
@@ -104,7 +104,7 @@ class LinkedList {
   }
 }
 
-// 范例
+// 示例
 const list = new LinkedList();
 
 list.push('1');
