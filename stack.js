@@ -1,4 +1,4 @@
-// 栈节点
+/** 栈节点 */ 
 class Node {
   constructor(element) {
     this.element = element;
@@ -6,29 +6,43 @@ class Node {
   }
 }
 
-// 栈
+/** 栈 */ 
 class Stack {
   constructor() {
     this.top = null;
   }
 
-  // 入栈
+  /** 
+   * 压栈
+   * 将数据添加至栈顶端
+   */ 
   push(element) {
     const node = new Node(element);
     node.next = this.top;
     this.top = node;
   }
 
-  // 出栈
+  /**
+   * 弹栈
+   * 将栈顶端数据移除
+   */ 
   pop() {
-    if (this.top === null) {
-      return;
-    }
-    this.top = this.top.next;
+    this.top = this.top && this.top.next;
   }
 
-  // 访问栈当前顶端元素
+  /** 访问栈顶端元素 */
   peek() {
     return this.top && this.top.element;
   }
 }
+
+// 示例
+const stack = new Stack();
+stack.push(1);
+stack.push(2);
+stack.push(3);
+
+stack.pop();
+
+console.log(stack);
+console.log(stack.peek());
