@@ -1,12 +1,14 @@
-// 最小堆
+/** 
+ * 最小堆 - 根节点为最小值
+ */ 
 class MinHeap {
   constructor() {
+    // index为0时赋值null,便于计算子节点index和父节点index的关系
     this.heap = [null]
   }
 
   insert(node) {
     this.heap.push(node);
-
     if (this.heap.length > 1) {
       let current = this.heap.length - 1;
       // ->> heapifyUp
@@ -20,6 +22,7 @@ class MinHeap {
     }
   }
 
+  /** 删除堆顶元素 */
   remove() {
     let smallest = this.heap[1];
     if (this.heap.length > 2) {
@@ -63,7 +66,20 @@ class MinHeap {
   }
 }
 
-// 最大堆
+// 示例
+const minHeap = new MinHeap();
+minHeap.insert(9);
+minHeap.insert(1);
+minHeap.insert(3);
+minHeap.insert(5);
+minHeap.insert(6);
+minHeap.remove();
+console.log('minHeap: ', minHeap);
+
+
+/**
+ * 最大堆 - 根节点为最大值
+ */ 
 class MaxHeap {
   constructor() {
     this.heap = [null]
@@ -127,3 +143,13 @@ class MaxHeap {
     return smallest;
   }
 }
+
+// 示例
+const maxHeap = new MaxHeap();
+maxHeap.insert(9);
+maxHeap.insert(1);
+maxHeap.insert(3);
+maxHeap.insert(5);
+maxHeap.insert(6);
+maxHeap.remove();
+console.log('maxHeap: ', maxHeap);
