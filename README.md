@@ -18,4 +18,5 @@
 
 [字典树 trie](https://github.com/mabel-xue/js-data-structures/blob/master/trie.js)
 
-二叉查找树 binarySearchTree
+[二叉查找树 binarySearchTree](https://github.com/mabel-xue/js-data-structures/blob/master/binarySearchTree.js)
+

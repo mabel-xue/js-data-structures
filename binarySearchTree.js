@@ -98,6 +98,8 @@ class BinarySearchTree {
       }
     } else { // node左、右子树都有
       // 用删除结点的直接前驱或直接后继替代删除结点，从树中删去它的直接前驱或直接后继
+      // 直接前驱: 删除结点的左子树中的最大结点
+      // 直接后继: 删除结点的右子树中的最小结点
       let predecessor = this.findPredecessor(node);
       const parentOfPredecessor = this.findParent(predecessor.key);
       if (parent) {
