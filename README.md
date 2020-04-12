@@ -17,3 +17,5 @@
 [优先队列 priorityQueue](https://github.com/mabel-xue/js-data-structures/blob/master/priorityQueue.js)
 
 [字典树 trie](https://github.com/mabel-xue/js-data-structures/blob/master/trie.js)
+
+二叉查找树 binarySearchTree
