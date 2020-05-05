@@ -27,7 +27,7 @@ class Node {
   getUncle() {
     const parent = this.parent;
     if (parent && parent.parent) {
-      return this.key < parent.key ? parent.parent.right : parent.parent.left;
+      return parent.key < parent.parent.key ? parent.parent.right : parent.parent.left;
     }
   }
 }
@@ -145,6 +145,7 @@ class RedBlackTree {
         parent.right = node.right;
         parent.right.parent = parent;
       }
+      node.parent = node.right;
     }
     node.right = rootLeft;
   }
@@ -165,6 +166,7 @@ class RedBlackTree {
         parent.right = node.left;
         parent.right.parent = parent;
       }
+      node.parent = node.left;
     }
     node.left = rootRight;
   }
@@ -178,6 +180,9 @@ rbTree.insert(40);
 rbTree.insert(30);
 rbTree.insert(20);
 rbTree.insert(10);
-rbTree.insert(1);
+// rbTree.insert(1);
+rbTree.insert(60);
+rbTree.insert(70);
+rbTree.insert(80);
 
 console.log('rbTree: ', rbTree.root);
