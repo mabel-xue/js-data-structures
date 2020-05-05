@@ -26,7 +26,9 @@ class MinHeap {
   remove() {
     let smallest = this.heap[1];
     if (this.heap.length > 2) {
+      // ->> 最后一个元素移动到堆顶
       this.heap[1] = this.heap[this.heap.length - 1];
+      // ->> 删除最后一个元素
       this.heap.splice(this.heap.length - 1);
       if (this.heap.length === 3) {
         if (this.heap[1] > this.heap[2]) {

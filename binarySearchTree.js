@@ -5,34 +5,32 @@ class Node {
     this.left = null;
     this.right = null;
   }
-
-  
 }
 
 /** 二叉查找树 */
-class BinarySearchTree {
+export class BinarySearchTree {
   constructor() {
     this.root = null;
   }
 
   /**
-   * 判断目标结点为指定结点current的左子节点还是右子节点
+   * 判断插入结点在左子树还是右子树
    * @param {number} key 
-   * @param {Node} current 
+   * @param {Node} node 
    */
-  _insert(key, current) {
-    const target = new Node(key);
-    if (key < current.key) { // 进入左子树
-      if (current.left) {
-        this._insert(key, current.left);
+  insertByNode(key, node) {
+    const insertNode = new Node(key);
+    if (key < node.key) { // 进入左子树
+      if (node.left) {
+        this.insertByNode(key, node.left);
       } else {
-        current.left = target;
+        node.left = insertNode;
       }
     } else { // 进入右子树
-      if (current.right) {
-        this._insert(key, current.right);
+      if (node.right) {
+        this.insertByNode(key, node.right);
       } else {
-        current.right = target;
+        current.right = insertNode;
       }
     }
   }

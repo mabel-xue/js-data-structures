@@ -20,4 +20,6 @@
 
 [二叉查找树 binarySearchTree](https://github.com/mabel-xue/js-data-structures/blob/master/binarySearchTree.js)
 
-AVL树 AVLTree
+[AVL树 AVLTree](https://github.com/mabel-xue/js-data-structures/blob/master/AVLTree.js)
+
+红黑树 RedBlackTree
