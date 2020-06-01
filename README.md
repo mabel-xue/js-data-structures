@@ -23,3 +23,5 @@
 [AVL树 AVLTree](https://github.com/mabel-xue/js-data-structures/blob/master/AVLTree.js)
 
 [红黑树 RedBlackTree](https://github.com/mabel-xue/js-data-structures/blob/master/redBlackTree.js)
+
+线段树 SegmentTree
