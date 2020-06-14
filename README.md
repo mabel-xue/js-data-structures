@@ -24,4 +24,6 @@
 
 [红黑树 RedBlackTree](https://github.com/mabel-xue/js-data-structures/blob/master/redBlackTree.js)
 
-线段树 SegmentTree
+[线段树 SegmentTree](https://github.com/mabel-xue/js-data-structures/blob/master/segmentTree.js)
+
+[树状数组 FenwickTree/Binary Indexed Tree](https://github.com/mabel-xue/js-data-structures/blob/master/fenwickTree.js)
